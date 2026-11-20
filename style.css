@@ -1,0 +1,379 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&display=swap');
+:root{--bg:#080809;--panel:#111113;--panel2:#171719;--red:#ed2435;--red2:#ff4655;--white:#f7f7f7;--muted:#a5a5ad;--line:rgba(255,255,255,.10);--max:1180px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:"DM Sans",Arial,sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button,input,textarea,select{font:inherit}.container{width:min(var(--max),calc(100% - 40px));margin:auto}.topline{height:3px;background:linear-gradient(90deg,transparent,var(--red),#ff8790,transparent)}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(8,8,9,.91);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav-wrap{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:10px;font-family:"Barlow Condensed",sans-serif;font-size:30px;font-weight:900;letter-spacing:1px}.brand-mark{width:38px;height:38px;border-radius:11px;background:var(--red);display:grid;place-items:center;font-size:21px;box-shadow:0 0 25px #ed243544}.brand span:last-child{color:var(--red)}
+.nav{display:flex;align-items:center;gap:27px}.nav a{font-size:13px;font-weight:700;color:#c9c9ce;transition:.2s}.nav a:hover,.nav a.active{color:#fff}.nav .nav-cta{background:var(--red);color:white;padding:11px 17px;border-radius:5px}.nav .nav-cta:hover{background:var(--red2);transform:translateY(-1px)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:#fff;border-radius:6px;padding:8px 11px;font-size:20px}
+.hero{position:relative;overflow:hidden;min-height:620px;display:flex;align-items:center;background:radial-gradient(ellipse at 76% 42%,#70101c88 0,transparent 38%),linear-gradient(110deg,#080809 8%,#10090c 56%,#1b080d 100%);border-bottom:1px solid var(--line)}
+.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(120deg,transparent 0 58px,#ffffff06 59px 60px);mask-image:linear-gradient(90deg,black,transparent 85%)}
+.hero:after{content:"";position:absolute;width:520px;height:520px;border:1px solid #ed24352c;border-radius:50%;right:5%;top:4%;box-shadow:0 0 0 35px #ed24350a,0 0 0 85px #ed243507,0 0 100px #ed243522;animation:pulse 7s ease-in-out infinite}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:50px;padding:82px 0}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:#ff7b86;font-size:11px;font-weight:800;letter-spacing:2.7px;text-transform:uppercase}.eyebrow:before{content:"";width:24px;height:2px;background:var(--red)}
+h1,h2,h3,p{margin-top:0}.hero h1{font-family:"Barlow Condensed",sans-serif;font-size:clamp(62px,8vw,108px);line-height:.88;letter-spacing:-2px;margin:22px 0}.hero h1 em{font-style:normal;color:var(--red);display:block}.hero-copy{max-width:520px;color:#c3c3c8;font-size:16px}.actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 21px;border-radius:5px;background:var(--red);color:#fff;font-size:12px;font-weight:800;letter-spacing:.7px;border:1px solid var(--red);transition:.22s;cursor:pointer}.btn:hover{background:var(--red2);border-color:var(--red2);transform:translateY(-2px);box-shadow:0 9px 30px #ed243533}.btn-outline{background:transparent;border-color:#ffffff45}.btn-outline:hover{background:#ffffff12;border-color:white}.hero-art{position:relative;min-height:390px;display:grid;place-items:center}.disc{width:min(390px,80vw);aspect-ratio:1;border-radius:50%;background:repeating-radial-gradient(circle at center,#101013 0 3px,#25252a 4px 5px,#0b0b0d 6px 9px);border:9px solid #202025;box-shadow:0 25px 90px #000,0 0 80px #ed243522;position:relative;animation:spin 24s linear infinite}.disc:before{content:"";position:absolute;inset:37%;border-radius:50%;background:radial-gradient(circle,#ff6c78 0 5%,var(--red) 6% 23%,#18181b 24% 100%);border:5px solid #333}.disc:after{content:"DD";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:"Barlow Condensed";font-size:46px;font-weight:900;color:white;z-index:1}.sound-bars{position:absolute;bottom:15px;left:50%;transform:translateX(-50%);display:flex;gap:5px;align-items:center;height:45px}.sound-bars i{width:4px;border-radius:8px;background:var(--red);animation:equalize .8s ease-in-out infinite alternate}.sound-bars i:nth-child(3n){animation-delay:.25s}.sound-bars i:nth-child(2n){animation-delay:.5s}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes pulse{50%{transform:scale(1.06);opacity:.55}}@keyframes equalize{from{height:7px}to{height:40px}}
+.ticker{overflow:hidden;background:var(--red);color:#fff;padding:11px 0;font-family:"Barlow Condensed";font-size:16px;font-weight:800;letter-spacing:2px;white-space:nowrap}.ticker-track{display:inline-block;min-width:200%;animation:marquee 28s linear infinite}.ticker span{padding:0 28px}@keyframes marquee{to{transform:translateX(-50%)}}
+.section{padding:82px 0}.section-sm{padding:56px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:30px}.section-head h2,.page-title{font-family:"Barlow Condensed";font-size:clamp(38px,5vw,58px);line-height:.98;letter-spacing:.2px;margin:10px 0 0;text-transform:uppercase}.section-head h2 span,.page-title span{color:var(--red)}.section-head p{max-width:440px;color:var(--muted);font-size:13px;margin:0}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.feature-card,.deal-card,.playlist-card,.category-card{background:var(--panel);border:1px solid var(--line);border-radius:9px;overflow:hidden;transition:.25s}.feature-card:hover,.deal-card:hover,.playlist-card:hover,.category-card:hover{transform:translateY(-5px);border-color:#ed243566;box-shadow:0 18px 45px #0007}.feature-image{height:210px;background-size:cover;background-position:center;position:relative}.feature-image:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#080809d9,transparent 65%)}.feature-image .tag{position:absolute;z-index:1;left:16px;bottom:15px;background:var(--red);padding:6px 10px;border-radius:3px;font-size:10px;font-weight:800;letter-spacing:1px}.card-body{padding:20px}.card-body h3{font-size:18px;margin:0 0 8px}.card-body p{font-size:13px;color:var(--muted);margin:0 0 15px}.text-link{color:#ff6571;font-size:12px;font-weight:800;letter-spacing:.6px}.text-link:hover{color:white}
+.deal-card{display:flex;flex-direction:column}.deal-img{height:190px;position:relative;background-size:cover;background-position:center}.deal-img .deal-label{position:absolute;top:13px;left:13px;background:var(--red);padding:6px 9px;border-radius:3px;font-size:10px;font-weight:800}.deal-info{padding:18px;display:flex;flex-direction:column;flex:1}.deal-info h3{font-size:16px;margin:0 0 7px}.deal-info p{font-size:12px;color:var(--muted);margin:0 0 16px}.deal-meta{display:flex;justify-content:space-between;align-items:center;margin-top:auto;margin-bottom:14px}.price{font-family:"Barlow Condensed";font-size:23px;font-weight:800;color:#fff}.deal-category{font-size:10px;color:#ff7a84;text-transform:uppercase;letter-spacing:1px;font-weight:800}.deal-info .btn{width:100%;padding:11px}
+.category-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.category-card{padding:22px 14px;text-align:center}.category-icon{font-size:27px;margin-bottom:9px}.category-card strong{display:block;font-size:12px}.category-card small{font-size:10px;color:var(--muted)}
+.cta-band{background:linear-gradient(105deg,#30080e,#a31322 58%,#410910);padding:43px;border-radius:10px;position:relative;overflow:hidden}.cta-band:after{content:"DD";position:absolute;right:4%;top:-65px;font-family:"Barlow Condensed";font-size:220px;font-weight:900;color:#ffffff0b}.cta-band h2{font-family:"Barlow Condensed";font-size:42px;line-height:1;margin:0 0 9px}.cta-band p{color:#f0cbd0;font-size:13px;margin:0;max-width:550px}.cta-content{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.page-hero{padding:76px 0 65px;background:radial-gradient(ellipse at 80% 10%,#6f101b66,transparent 45%),#0c0c0e;border-bottom:1px solid var(--line)}.page-hero p{color:var(--muted);max-width:650px;margin:17px 0 0;font-size:14px}.crumb{font-size:11px;color:#ff7580;letter-spacing:2px;font-weight:800;text-transform:uppercase}
+.playlist-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}.playlist-card{padding:13px}.playlist-card h3{font-size:17px;margin:12px 4px 5px}.playlist-card p{color:var(--muted);font-size:12px;margin:0 4px 12px}.video-wrap{position:relative;aspect-ratio:16/9;border-radius:6px;overflow:hidden;background:#000}.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.playlist-actions{display:flex;justify-content:space-between;align-items:center;padding:0 4px 4px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:25px}.filter-btn{border:1px solid var(--line);background:#111;color:#c9c9ce;padding:9px 14px;border-radius:30px;font-size:11px;font-weight:800;cursor:pointer}.filter-btn.active,.filter-btn:hover{background:var(--red);border-color:var(--red);color:white}.deal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.empty-note{grid-column:1/-1;padding:28px;border:1px dashed #ffffff30;border-radius:8px;color:var(--muted);font-size:13px}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:35px}.contact-panel{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:26px}.contact-panel h3{font-family:"Barlow Condensed";font-size:28px;margin:0 0 10px}.contact-panel p{font-size:13px;color:var(--muted)}.social-list{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.social-btn{border:1px solid var(--line);border-radius:5px;padding:10px 13px;font-size:11px;font-weight:800}.social-btn:hover{border-color:var(--red);color:#ff7a84}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:11px;color:#d0d0d4;font-weight:700}.field input,.field textarea,.field select{background:#09090b;border:1px solid #ffffff24;color:#fff;padding:12px;border-radius:5px;outline:none;width:100%}.field input:focus,.field textarea:focus{border-color:var(--red)}.field textarea{min-height:130px;resize:vertical}.form-note{font-size:10px!important;color:#85858c!important;margin:12px 0 0!important}
+.site-footer{background:#050506;border-top:1px solid var(--line);padding:52px 0 20px}.footer-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr 1fr;gap:35px}.footer-brand p{max-width:300px;color:var(--muted);font-size:12px;margin:13px 0}.footer-col h4{font-size:11px;letter-spacing:1.5px;color:#fff;margin:5px 0 15px}.footer-col a{display:block;color:var(--muted);font-size:12px;margin:9px 0}.footer-col a:hover{color:#ff6975}.footer-bottom{border-top:1px solid var(--line);margin-top:38px;padding-top:17px;display:flex;justify-content:space-between;gap:15px;color:#777780;font-size:10px}.footer-bottom a{color:#aaa}
+.disclosure{border:1px solid #ed243544;background:#ed24350b;border-radius:7px;padding:15px 17px;color:#d4c2c4;font-size:11px;margin:20px 0}.legal-copy{max-width:850px}.legal-copy h2{font-family:"Barlow Condensed";font-size:27px;margin:30px 0 8px}.legal-copy p,.legal-copy li{font-size:13px;color:#b8b8be}.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s,transform .65s}.reveal.visible{opacity:1;transform:none}
+@media(max-width:900px){.nav{gap:15px}.hero-grid{gap:20px}.hero{min-height:550px}.grid-3,.deal-grid{grid-template-columns:repeat(2,1fr)}.category-grid{grid-template-columns:repeat(3,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:800px){.container{width:min(100% - 30px,var(--max))}.nav-wrap{height:68px}.menu-btn{display:block}.nav{display:none;position:absolute;top:68px;left:0;right:0;background:#0c0c0e;border-bottom:1px solid var(--line);padding:18px 22px 22px;flex-direction:column;align-items:stretch;gap:0}.nav.open{display:flex}.nav a{padding:12px 0;border-bottom:1px solid #ffffff12}.nav .nav-cta{margin-top:12px;text-align:center}.hero-grid{grid-template-columns:1fr;padding:65px 0 45px}.hero{min-height:unset}.hero h1{font-size:68px}.hero-art{min-height:280px;order:-1}.disc{width:260px}.hero:after{width:310px;height:310px;right:2%;top:2%}.section{padding:60px 0}.section-head{align-items:start;flex-direction:column}.grid-3,.grid-2,.deal-grid,.playlist-grid{grid-template-columns:1fr}.category-grid{grid-template-columns:repeat(2,1fr)}.cta-band{padding:27px 22px}.cta-content{align-items:flex-start;flex-direction:column}.cta-band h2{font-size:35px}.page-hero{padding:55px 0 45px}.contact-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.footer-grid{grid-template-columns:1fr 1fr;gap:25px}.footer-brand{grid-column:1/-1}.footer-bottom{flex-direction:column}.playlist-actions{align-items:flex-start;gap:10px;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+
+/* Shared DKNY sponsored banner */
+.dkny-link{display:block;text-decoration:none;border-radius:12px}
+.dkny-link:focus-visible{outline:3px solid #f4dfa7;outline-offset:5px}
+.dkny-ad{position:relative;display:flex;width:100%;height:340px;overflow:hidden;background:#111;border:1px solid #b99b5e;border-radius:12px;font-family:Arial,sans-serif;color:white;isolation:isolate;line-height:normal}
+.dkny-photo{width:33.333%;height:100%;overflow:hidden}
+.dkny-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.72);transition:transform 1s,filter 1s}
+.dkny-ad:hover .dkny-photo img,.dkny-link:focus-visible .dkny-photo img{transform:scale(1.09);filter:brightness(.9)}
+.dkny-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.35),rgba(0,0,0,.78) 35%,rgba(0,0,0,.8) 65%,rgba(0,0,0,.25));z-index:1}
+.dkny-content{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:15px}
+.dkny-top{font-size:10px;letter-spacing:5px;color:#e8ce91;margin-bottom:8px}
+.dkny-logo{font-size:clamp(48px,9vw,76px);font-weight:900;letter-spacing:10px;text-shadow:0 3px 20px #000;animation:dknyGlow 2.5s infinite alternate}
+.dkny-line{width:90px;height:1px;background:#d6b66d;margin:9px 0 13px;flex-shrink:0}
+.dkny-heading{font-size:clamp(16px,3vw,25px);font-weight:bold;letter-spacing:4px}
+.dkny-sub{font-size:10px;letter-spacing:3px;color:#e6d2a5;margin:12px 0 22px}
+.dkny-button{background:linear-gradient(100deg,#b18b46,#f4dfa7,#b18b46);color:#17120a;padding:14px 23px;font-size:11px;font-weight:bold;letter-spacing:2px;border-radius:2px;box-shadow:0 4px 20px #c4a25b55;animation:dknyPulse 2s infinite}
+.dkny-bottom{font-size:9px;letter-spacing:2px;color:#ddd;margin-top:18px}
+.dkny-shine{position:absolute;z-index:3;top:-100%;left:-35%;width:20%;height:300%;transform:rotate(25deg);background:linear-gradient(90deg,transparent,#ffffff30,transparent);animation:dknyShine 5s infinite;pointer-events:none}
+@keyframes dknyGlow{from{text-shadow:0 0 5px #c4a25b}to{text-shadow:0 0 22px #e6c77f,0 0 35px #b18b46}}
+@keyframes dknyPulse{50%{box-shadow:0 0 22px #e5c77b88}}
+@keyframes dknyShine{0%{transform:translateX(0) rotate(25deg)}65%,100%{transform:translateX(825%) rotate(25deg)}}
+@media(max-width:500px){.dkny-ad{height:290px}.dkny-top{font-size:8px;letter-spacing:3px}.dkny-logo{letter-spacing:6px}.dkny-heading{letter-spacing:2px}.dkny-button{font-size:9px;padding:12px 15px}.dkny-bottom{font-size:7px;letter-spacing:1px}}
+
+/* Air India promotion, below DKNY and aligned to the right. */
+.air-india-ad{width:100%;max-width:850px;margin:15px 0 0 auto;min-height:330px;border-radius:18px;overflow:hidden;position:relative;color:white;font-family:Arial,sans-serif;background:linear-gradient(90deg,#080d22ed,#080d2270),url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200') center/cover;padding:35px 28px;line-height:normal}
+.air-india-kicker{font-size:12px;letter-spacing:3px;color:#ffd166}
+.air-india-heading{font-size:clamp(30px,6vw,48px);font-weight:900;line-height:1.1;margin:20px 0 0}
+.air-india-sub{margin-top:13px;font-size:16px;color:#eee}
+.air-india-offer{margin-top:20px;color:#ffd166;font-size:27px;font-weight:bold;animation:airIndiaShine 2s infinite}
+.air-india-code{font-size:13px;margin-top:7px}.air-india-code b{color:#ffd166}
+.air-india-button{display:inline-block;margin-top:22px;background:#d7193f;color:white;text-decoration:none;padding:14px 25px;border-radius:30px;font-size:14px;font-weight:bold}
+.air-india-button:hover{background:#b91536}.air-india-button:focus-visible{outline:3px solid #ffd166;outline-offset:4px}
+.air-india-plane{position:absolute;right:15px;top:12px;font-size:30px;animation:airIndiaFly 8s linear infinite;pointer-events:none}
+.air-india-terms{font-size:10px;color:#ccc;margin-top:14px}
+@keyframes airIndiaShine{50%{box-shadow:0 0 25px #ffd166}}
+@keyframes airIndiaFly{from{transform:translateX(100px)}to{transform:translateX(-850px)}}
+@media(max-width:500px){.air-india-ad{padding:35px 20px}.air-india-kicker{font-size:10px;letter-spacing:2px}}
+
+/* AliExpress sponsored promotion */
+.ali-ad{position:relative;min-height:390px;overflow:hidden;border-radius:18px;color:white;font-family:Arial,sans-serif;background:#101020;display:flex;align-items:center;padding:35px 6%}
+.ali-photo{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=1600');background-size:cover;background-position:center;animation:aliZoom 14s ease-in-out infinite alternate}
+.ali-shade{position:absolute;inset:0;background:linear-gradient(90deg,#080817ed 5%,#080817c9 50%,#08081744)}
+.ali-text{position:relative;z-index:2;max-width:520px}
+.ali-top{color:#ffdc65;font-weight:bold;letter-spacing:2px;font-size:12px}
+.ali-text h2{font-size:clamp(36px,6vw,62px);line-height:1;margin:20px 0;font-weight:1000;text-shadow:2px 3px 10px #000}
+.ali-text h2 span{color:#ffcf43}.ali-text p{font-size:15px;line-height:1.6}.ali-text h3{color:#ffdf70;font-size:17px}
+.ali-text a{display:inline-block;background:linear-gradient(90deg,#ffed65,#ff8b19);color:#211000;text-decoration:none;padding:16px 23px;border-radius:40px;font-size:14px;font-weight:900;box-shadow:0 0 25px #ffb52b;animation:aliPulse 2s infinite}
+.ali-text a:hover{background:linear-gradient(90deg,#fff29a,#ffab4c)}.ali-text a:focus-visible{outline:3px solid white;outline-offset:5px}
+.ali-text small{display:block;margin-top:18px;color:#eee}
+.ali-thumbs{position:absolute;right:5%;bottom:22px;z-index:3;display:flex;gap:10px}
+.ali-thumbs img{width:85px;height:85px;object-fit:cover;border:2px solid white;border-radius:13px;box-shadow:0 5px 20px #0008;animation:aliFloat 3s ease-in-out infinite}
+.ali-thumbs img:nth-child(2){animation-delay:.5s}.ali-thumbs img:nth-child(3){animation-delay:1s}
+@keyframes aliZoom{to{transform:scale(1.12)}}
+@keyframes aliFloat{50%{transform:translateY(-12px)}}
+@keyframes aliPulse{50%{box-shadow:0 0 35px #ffdb53;transform:scale(1.03)}}
+@media(max-width:1000px){.ali-ad{padding-bottom:135px}.ali-thumbs{right:6%}}
+@media(max-width:600px){.ali-ad{min-height:480px;padding:25px 20px 130px}.ali-shade{background:linear-gradient(90deg,#080817e8,#08081799)}.ali-thumbs{right:0;left:0;bottom:15px;justify-content:center}.ali-thumbs img{width:75px;height:75px}}
+
+/* Shared REDMAGIC sponsored banner */
+.rm-ad{position:relative;overflow:hidden;max-width:850px;margin:auto;min-height:440px;border-radius:18px;background:linear-gradient(90deg,rgba(5,5,8,.96),rgba(8,5,9,.65),rgba(5,5,8,.5)),url("https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=1400") center/cover;color:white;font-family:Arial,sans-serif;border:1px solid #ef2424;box-shadow:0 0 25px #e20d3055;line-height:normal}
+.rm-link{display:block;position:relative;z-index:2;text-decoration:none;color:white;min-height:440px}
+.rm-link:focus-visible{outline:3px solid white;outline-offset:-5px;border-radius:18px}
+.rm-content{padding:32px 25px;animation:rmEnter 1s ease both}
+.rm-top{color:#ff3838;letter-spacing:3px;font-size:12px;font-weight:bold}
+.rm-ad .rm-logo{font-size:clamp(40px,8vw,75px);margin:20px 0 0;font-weight:1000;letter-spacing:-3px;text-shadow:0 0 20px #ff2222;overflow-wrap:anywhere}
+.rm-logo span{color:#ff3030}
+.rm-ad .rm-heading{font-size:clamp(24px,5vw,42px);margin:0;letter-spacing:3px}
+.rm-sub{color:#ff4545;font-weight:bold;letter-spacing:5px;margin:1em 0}
+.rm-offer{margin:22px 0;padding:14px 20px;display:inline-flex;flex-direction:column;background:linear-gradient(120deg,#c90020,#ff3333);border-radius:9px;box-shadow:0 0 22px #ff202088;animation:rmPulse 1.8s infinite}
+.rm-offer strong{font-size:35px}.rm-offer span{font-size:14px;font-weight:bold}
+.rm-features{line-height:2;font-size:13px;font-weight:bold;letter-spacing:1px}
+.rm-button{display:inline-block;margin-top:22px;background:white;color:#d40020;font-size:14px;font-weight:900;padding:16px 25px;border-radius:5px;box-shadow:0 0 20px #ff333388;transition:.3s}
+.rm-link:hover .rm-button,.rm-link:focus-visible .rm-button{background:#ff2525;color:white;transform:scale(1.06)}
+.rm-bottom{font-size:11px;letter-spacing:3px;color:#ff5252;margin:22px 0 1em}
+.rm-content small{font-size:10px;color:#ccc}.rm-offer small{font-size:11px;color:white}
+.rm-glow{position:absolute;width:250px;height:500px;left:100%;top:-40px;background:linear-gradient(90deg,transparent,#ff171722,transparent);transform:rotate(35deg);animation:rmSweep 4s infinite;pointer-events:none}
+@keyframes rmPulse{50%{box-shadow:0 0 35px #ff2525}}
+@keyframes rmSweep{from{transform:translateX(300px) rotate(35deg)}to{transform:translateX(-1200px) rotate(35deg)}}
+@keyframes rmEnter{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:500px){.rm-content{padding:28px 18px}.rm-top{letter-spacing:1.5px}.rm-button{font-size:12px;padding:16px 18px}}
+
+/* Shared Lenovo sponsored promotion */
+.lenovo-deal{font-family:Arial,sans-serif;background:#090b10;color:#fff;border-radius:18px;overflow:hidden;position:relative;text-align:center;padding:28px 16px;isolation:isolate}
+.lenovo-deal:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,#171a24,#08090e 55%,#3a080d);z-index:-2}
+.lenovo-deal:after{content:"";position:absolute;width:320px;height:320px;background:#e2231a;filter:blur(120px);opacity:.25;top:-160px;right:-100px;z-index:-1;animation:lenovoGlow 5s infinite alternate;pointer-events:none}
+@keyframes lenovoGlow{to{transform:translate(-180px,150px);opacity:.5}}
+.lenovo-deal *{box-sizing:border-box}
+.lenovo-deal .lenovo-link{display:block;color:inherit;text-decoration:none;border-radius:6px}
+.lenovo-deal .lenovo-link:focus-visible{outline:3px solid #fff;outline-offset:5px}
+.lenovo-deal .lenovo-brand{color:#ff3535;font-size:14px;font-weight:900;letter-spacing:4px}
+.lenovo-deal .lenovo-heading{font-size:clamp(30px,6vw,52px);line-height:1.05;margin:17px 0 10px}
+.lenovo-deal .lenovo-heading span{color:#ff3939}
+.lenovo-deal p{color:#ccc;font-size:15px}
+.lenovo-deal .hero-img{width:min(90%,520px);height:210px;object-fit:contain;filter:drop-shadow(0 15px 25px #000);animation:lenovoFloat 4s ease-in-out infinite}
+@keyframes lenovoFloat{50%{transform:translateY(-12px)}}
+.lenovo-deal .offer{display:inline-block;background:#e2231a;padding:10px 18px;border-radius:5px;font-size:14px;font-weight:bold;margin:12px 0;animation:lenovoPulse 1.8s infinite}
+@keyframes lenovoPulse{50%{box-shadow:0 0 22px #e2231a}}
+.lenovo-deal .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:650px;margin:20px auto}
+.lenovo-deal .tile{background:#ffffff0d;border:1px solid #ffffff24;border-radius:10px;padding:15px 7px;backdrop-filter:blur(8px)}
+.lenovo-deal .tile b{display:block;color:#ff4848;font-size:17px;margin-bottom:6px}
+.lenovo-deal .tile small{color:#ddd}
+.lenovo-deal .cta{display:inline-block;background:#e2231a;padding:15px 30px;border-radius:6px;font-weight:900;letter-spacing:1px;margin:12px 0;transition:transform .3s,background .3s,box-shadow .3s}
+.lenovo-deal .lenovo-link:hover .cta,.lenovo-deal .lenovo-link:focus-visible .cta{background:#ff4037;transform:scale(1.06);box-shadow:0 0 25px #e2231a}
+.lenovo-deal .products{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:20px auto}
+.lenovo-deal .products>div{flex:1 1 130px;max-width:190px;background:#fff;border-radius:10px;color:#111;padding:12px 5px;transition:transform .3s}
+.lenovo-deal .products>div:hover{transform:translateY(-6px)}
+.lenovo-deal .products img{display:block;width:100%;height:95px;object-fit:contain}
+.lenovo-deal .products b{font-size:13px}
+.lenovo-deal .note{font-size:10px;color:#aaa;margin-top:16px}
+@media(max-width:480px){.lenovo-deal .grid{grid-template-columns:1fr 1fr}.lenovo-deal .hero-img{height:165px}}
+@media(prefers-reduced-motion:reduce){.lenovo-deal:after,.lenovo-deal .hero-img,.lenovo-deal .offer{animation:none}.lenovo-deal .cta,.lenovo-deal .products>div{transition:none}}
+
+/* Keep catalog product photography fully visible within featured cards. */
+.deal-img--product{background-size:contain;background-repeat:no-repeat;background-color:#f4f4f5}
+
+/* Kinguin software promotion: scoped to preserve existing offers. */
+.kinguin-deals,.kinguin-deals *{box-sizing:border-box}
+.kinguin-deals{font-family:Arial,sans-serif;max-width:1050px;margin:15px auto;padding:28px 18px;border-radius:22px;overflow:hidden;color:white;background:linear-gradient(120deg,rgba(8,8,24,.94),rgba(28,8,52,.88)),url('https://images.kinguin.net/g/evergreen-product-card/media/images/banners/_800x700_-ms-office_2024_H.jpg') center/cover;position:relative;border:1px solid #854cff;box-shadow:0 0 35px #7829ff44}
+.kinguin-deals:before{content:"";position:absolute;inset:-50%;background:linear-gradient(115deg,transparent 40%,#a65cff20 50%,transparent 60%);animation:kinguin-shine 7s linear infinite;pointer-events:none}
+@keyframes kinguin-shine{to{transform:translateX(50%)}}
+.kinguin-deals .hero{text-align:center;position:relative}
+.kinguin-deals .tag{display:inline-block;background:#ffcf30;color:#171020;padding:8px 16px;border-radius:30px;font-size:12px;font-weight:900;letter-spacing:1px;animation:kinguin-pulse 1.5s infinite}
+@keyframes kinguin-pulse{50%{box-shadow:0 0 22px #ffcf30}}
+.kinguin-deals .hero h2{font-size:clamp(29px,6vw,55px);line-height:1.05;margin:18px 0 10px;font-weight:950;text-transform:uppercase;background:linear-gradient(90deg,#fff,#d9a7ff,#ffdf70);background-clip:text;-webkit-background-clip:text;color:transparent}
+.kinguin-deals .hero p{color:#d9cce9;font-size:15px}
+.kinguin-deals .big-offer{font-size:clamp(34px,7vw,65px);font-weight:1000;color:#ffda48;text-shadow:0 0 24px #ff8c00;margin:12px 0;animation:kinguin-float 2s ease-in-out infinite}
+@keyframes kinguin-float{50%{transform:translateY(-7px)}}
+.kinguin-deals .products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin:27px 0;position:relative}
+.kinguin-deals .product{background:#171329;border:1px solid #6841a2;border-radius:15px;overflow:hidden;text-decoration:none;color:white;transition:transform .3s,border-color .3s,box-shadow .3s;position:relative}
+.kinguin-deals .product:hover{transform:translateY(-8px);border-color:#ffcf30;box-shadow:0 10px 28px #a34cff55}
+.kinguin-deals .product img{width:100%;height:135px;object-fit:cover;background:#21183b;display:block}
+.kinguin-deals .info{padding:12px}
+.kinguin-deals .info h3{font-size:13px;min-height:34px;margin:3px 0 8px}
+.kinguin-deals .discount{background:#ff3c6a;color:white;font-weight:900;font-size:12px;padding:6px 9px;border-radius:6px;display:inline-block}
+.kinguin-deals .price{color:#ffdb62;font-weight:bold;font-size:14px;margin:10px 0}
+.kinguin-deals .buy{display:block;text-align:center;background:linear-gradient(90deg,#8b35ff,#ec39ad);padding:10px 5px;border-radius:8px;font-size:12px;font-weight:900;color:white}
+.kinguin-deals .cta{display:block;position:relative;text-align:center;text-decoration:none;background:linear-gradient(90deg,#ffbd24,#ff6c26);color:#1b1020;font-weight:1000;font-size:19px;padding:17px 15px;border-radius:12px;box-shadow:0 0 25px #ff9c3970;animation:kinguin-glow 1.7s infinite;transition:transform .3s}
+@keyframes kinguin-glow{50%{box-shadow:0 0 35px #ffb42c}}
+.kinguin-deals .cta:hover{transform:scale(1.025)}
+.kinguin-deals a:focus-visible{outline:3px solid #ffcf30;outline-offset:3px}
+.kinguin-deals .bottom{position:relative;text-align:center;font-size:12px;color:#bdb2d0;margin-top:17px}
+@media(max-width:650px){.kinguin-deals{padding:23px 12px}.kinguin-deals .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.kinguin-deals .product img{height:125px}.kinguin-deals .info{padding:9px}}
+@media(prefers-reduced-motion:reduce){.kinguin-deals:before,.kinguin-deals .tag,.kinguin-deals .big-offer,.kinguin-deals .cta{animation:none}.kinguin-deals .product,.kinguin-deals .cta{transition:none}.kinguin-deals .product:hover,.kinguin-deals .cta:hover{transform:none}}
+
+/* Home page sponsored banners: REDMAGIC left, Kinguin right. */
+.home-sponsored-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch}
+.home-sponsored-pair .rm-ad{width:100%;max-width:none;margin:0;min-width:0}
+.kinguin-home-banner{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0;text-align:center;text-decoration:none;color:white;padding:30px 12px;border-radius:16px;font-family:Arial,sans-serif;background:linear-gradient(90deg,rgba(8,5,25,.88),rgba(35,10,65,.65)),url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1000') center/cover;box-shadow:0 0 25px #8d35ff;animation:kinguin-home-glow 3s infinite}
+.kinguin-home-tag{font-size:13px;letter-spacing:3px}
+.kinguin-home-banner h2{font-size:28px;line-height:1.2;margin:12px 0}
+.kinguin-home-offer{font-size:48px;font-weight:900;color:#ffdf40;text-shadow:0 0 15px orange}
+.kinguin-home-banner p{margin:16px 0}
+.kinguin-home-cta{display:inline-block;background:#ffbd24;color:#160d20;padding:14px 28px;border-radius:30px;font-weight:900}
+.kinguin-home-banner:focus-visible{outline:3px solid #ffdf40;outline-offset:5px}
+@keyframes kinguin-home-glow{50%{box-shadow:0 0 35px #a34cff}}
+@media(max-width:800px){.home-sponsored-pair{grid-template-columns:minmax(0,1fr)}.kinguin-home-banner{min-height:360px}}
+@media(prefers-reduced-motion:reduce){.kinguin-home-banner{animation:none}}
+
+/* Dedicated collection rows within Featured Finds. */
+.finds-row-heading{grid-column:1/-1;font-size:24px;line-height:1.2;margin:20px 0 0;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.finds-row-heading:first-child{margin-top:0}
+.kinguin-filters{margin-top:-10px}
+
+/* Offers page: paired REDMAGIC and Kinguin game promotions. */
+.deals-sponsored-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch}
+.deals-sponsored-pair .rm-ad{width:100%;max-width:none;margin:0;min-width:0}
+.kinguin-games-banner{min-width:0;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:32px 25px;background:radial-gradient(ellipse at top right,#76402755,transparent 65%),#15121d;border:1px solid #f0ad4b66;border-radius:18px;color:#fff}
+.kinguin-games-kicker{font-size:11px;font-weight:800;letter-spacing:2px;color:#f4bf6c}
+.kinguin-games-banner h2{font-size:clamp(26px,3vw,40px);line-height:1.1;margin:20px 0 12px}
+.kinguin-games-banner h2 span{color:#f4bf6c}
+.kinguin-games-banner p{font-size:14px;color:#d0c5d4;max-width:38ch}
+.kinguin-games-art{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:28px 0}
+.kinguin-games-art figure{min-width:0;margin:0;animation:kinguin-games-drift 5s ease-in-out infinite}
+.kinguin-games-art figure:nth-child(2){animation-delay:-1.7s}.kinguin-games-art figure:nth-child(3){animation-delay:-3.4s}
+.kinguin-games-art img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:9px;border:1px solid #ffffff30;box-shadow:0 12px 20px #08060c66}
+.kinguin-games-art figcaption{margin-top:9px;font-size:10px;color:#d0c5d4;line-height:1.4}
+.kinguin-games-link{align-self:flex-start;display:inline-block;padding:12px 16px;border-radius:7px;background:#f4bf6c;color:#20150c;font-size:12px;font-weight:900;text-decoration:none}
+.kinguin-games-link:hover{background:#ffda9e}.kinguin-games-link:focus-visible{outline:3px solid white;outline-offset:4px}
+.kinguin-games-banner small{display:block;color:#b9acbf;font-size:10px;margin-top:16px}
+@keyframes kinguin-games-drift{50%{transform:translateY(-8px)}}
+@media(max-width:800px){.deals-sponsored-pair{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){.kinguin-games-art figure{animation:none}}
+
+/* Phone and tablet usability; desktop typography and layout stay unchanged. */
+img{height:auto}
+iframe,video,embed,object{max-width:100%}
+@media(max-width:800px){
+  body{font-size:16px;overflow-wrap:anywhere}
+  .container *{min-width:0}
+  p,li,small,label,.nav a,.btn,.text-link,.filter-btn,.social-btn,
+  .section-head p,.card-body p,.deal-info p,.category-card strong,.category-card small,
+  .page-hero p,.playlist-card p,.contact-panel p,.field label,.form-note,
+  .footer-brand p,.footer-col a,.footer-col h4,.footer-bottom,.disclosure,
+  .legal-copy p,.legal-copy li,.eyebrow,.crumb,.deal-category,.empty-note,
+  .feature-image .tag,.deal-label,.dkny-top,.dkny-sub,.dkny-bottom,.dkny-button,
+  .air-india-kicker,.air-india-code,.air-india-terms,.air-india-button,
+  .ali-top,.ali-text p,.ali-text a,.rm-top,.rm-features,.rm-button,.rm-bottom,
+  .rm-content small,.rm-offer small,.rm-offer span,
+  .lenovo-deal .lenovo-brand,.lenovo-deal p,.lenovo-deal .offer,
+  .lenovo-deal .products b,.lenovo-deal .note,.kinguin-deals .tag,
+  .kinguin-deals .hero p,.kinguin-deals .info h3,.kinguin-deals .discount,
+  .kinguin-deals .price,.kinguin-deals .buy,.kinguin-deals .bottom,
+  .kinguin-home-tag,.kinguin-games-kicker,.kinguin-games-banner p,
+  .kinguin-games-art figcaption,.kinguin-games-link,.kinguin-games-banner small{font-size:16px!important}
+  a,button,input:not([type="hidden"]),select,textarea{min-width:44px;min-height:44px}
+  input,select,textarea{font-size:16px}
+  .brand,.text-link,.social-btn,.footer-col a{display:flex;align-items:center}
+  .text-link,.social-btn{display:inline-flex}
+  .footer-col a{margin:0;padding:8px 0}
+  .menu-btn{min-width:44px;min-height:44px;flex-shrink:0;cursor:pointer}
+  .nav{max-height:calc(100dvh - 71px);overflow-y:auto}
+  .nav a{display:flex;align-items:center}
+  .nav .nav-cta{justify-content:center}
+  .hero h1{font-size:clamp(48px,12vw,68px)}
+  .hero-art .disc{width:min(260px,100%)}
+  .eyebrow{letter-spacing:1.5px}
+  .eyebrow:before{flex-shrink:0}
+  .deal-meta{flex-wrap:wrap;gap:8px}
+  .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .newsletter-fields{flex-direction:column}
+  .dkny-ad{height:auto;min-height:390px}
+  .dkny-photo{position:absolute;inset:0;width:33.333%;height:100%}
+  .dkny-photo:nth-child(2){left:33.333%}
+  .dkny-photo:nth-child(3){left:66.666%}
+  .dkny-content{position:relative;width:100%;padding:24px 15px}
+  .dkny-top,.dkny-sub,.dkny-heading{letter-spacing:2px}
+  .dkny-bottom{letter-spacing:1px}
+  .kinguin-deals .hero{display:block;min-height:0;padding:20px 8px}
+  .kinguin-deals .hero:before,.kinguin-deals .hero:after{content:none}
+  .kinguin-games-art{grid-template-columns:1fr}
+  .kinguin-games-art img{max-height:240px;object-fit:contain}
+}
+@media(max-width:380px){
+  .footer-grid,.kinguin-deals .products,.lenovo-deal .grid{grid-template-columns:minmax(0,1fr)}
+  .contact-panel{padding:20px}
+}
+
+/* Culture edit: warm paper accents, ink surfaces and photographic stories. */
+:root{--bg:#101111;--panel:#191b1b;--panel2:#202222;--white:#f4f0e8;--muted:#b6b5af;--red:#d54d40;--red2:#e76557;--line:rgba(244,240,232,.14);--max:1240px}
+body{background:var(--bg)}.topline{background:#d54d40;height:4px}.brand-mark{border-radius:50%;box-shadow:none}.nav-wrap{height:86px}.nav a{font-size:14px}.nav .nav-cta,.btn{border-radius:2px}.site-header{background:rgba(16,17,17,.96)}a:focus-visible,button:focus-visible{outline:3px solid #eac68a;outline-offset:5px}.eyebrow{color:#dca88e;letter-spacing:2px}.eyebrow:before{background:#dca88e}.section-head h2{font-size:clamp(38px,4.5vw,62px);line-height:.98;letter-spacing:-.5px}.section-head h2 span{color:#c69b7b}.section-head p{font-size:15px}.section{padding:88px 0}.section-sm{padding:36px 0}.editorial-hero{background:#151717;min-height:0;border-bottom:0}.editorial-hero:before,.editorial-hero:after{content:none}.editorial-hero .hero-grid{grid-template-columns:1.05fr 1fr;gap:60px;padding:52px 0 60px}.editorial-hero h1{font-size:clamp(70px,7.7vw,112px);line-height:.91;letter-spacing:-1.5px;margin:28px 0}.editorial-hero h1 em{color:#dca88e}.hero-intro{padding:20px 0}.hero-copy{font-size:17px;max-width:460px;color:#bebfb7}.hero-footnote{font-size:10px;letter-spacing:1.6px;color:#a6aaa2;margin-top:44px;display:flex;gap:10px;align-items:center}.live-dot{width:6px;height:6px;background:#c1d5ae;border-radius:50%}.hero-cover{position:relative;min-height:500px;align-self:stretch;overflow:hidden;background:#262423;border-radius:140px 3px 3px 3px}.hero-cover>img{height:100%;width:100%;position:absolute;object-fit:cover;opacity:.7;transition:transform .8s}.hero-cover:hover>img{transform:scale(1.04)}.hero-cover:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#171715e8,transparent 85%)}.cover-top,.cover-bottom{position:absolute;z-index:1;left:32px;right:32px}.cover-top{top:32px;display:flex;justify-content:space-between;font-size:10px;letter-spacing:1.5px;padding-left:54px}.cover-bottom{bottom:32px}.cover-bottom small{font-size:10px;letter-spacing:2.5px;color:#e3bd98}.cover-bottom strong{display:block;font-family:'Barlow Condensed',sans-serif;font-size:64px;line-height:.95;margin:16px 0}.cover-bottom>span{display:block;border-top:1px solid #ffffff55;padding-top:15px;font-size:12px;letter-spacing:2px}.theme-strip{background:#d9b494;color:#242420}.theme-strip .container{display:flex;align-items:center;justify-content:space-between;gap:18px;padding-block:18px;font-family:'Barlow Condensed',sans-serif;font-size:21px;font-weight:700;letter-spacing:2px;flex-wrap:wrap}.theme-strip i{font-size:13px;font-style:normal}.world-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px}.world-card{grid-column:span 2;position:relative;isolation:isolate;min-height:260px;padding:24px;overflow:hidden;background:#262a29;display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--line)}.world-card:first-child,.world-card:nth-child(2){grid-column:span 3;min-height:330px}.world-card img{position:absolute;width:100%;height:100%;inset:0;object-fit:cover;z-index:-2;transition:transform .6s}.world-card:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#10111135,#10111125 20%,#101111ed);z-index:-1}.world-card:hover img{transform:scale(1.05)}.world-technology img{object-fit:contain;background:#d5d1ca}.world-number{font-size:10px;letter-spacing:2px}.world-card h3{font-family:'Barlow Condensed',sans-serif;font-size:44px;text-transform:uppercase;margin-bottom:0}.world-card p{font-size:14px;margin-bottom:0;color:#d5d1ca}.world-arrow{position:absolute;right:24px;bottom:30px;font-size:25px}.home-finds{grid-template-columns:repeat(4,minmax(0,1fr))}.deal-card,.feature-card,.playlist-card{border-radius:3px;box-shadow:none;background:var(--panel);border:1px solid var(--line)}.home-finds .deal-img{height:210px}.home-finds .deal-info{padding:20px}.home-finds h3{font-size:20px}.home-finds .deal-info p{font-size:13px}.home-finds .price{font-size:12px}.edit-note{color:var(--muted);font-size:12px;margin:22px 0 0}.partner-label{color:#a9a79e;font-size:10px;letter-spacing:2px;margin-bottom:14px}.partner-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.partner-grid>a{position:relative;overflow:hidden;display:flex;flex-direction:column;padding:32px;min-height:390px;border:1px solid #ffffff20}.travel-promo{background:linear-gradient(125deg,#581d27,#8f3540);color:#fff1de}.shopping-promo{background:#d3b190;color:#28231e}.partner-brand{font-size:23px;font-weight:800;display:flex;justify-content:space-between;border-bottom:1px solid currentColor;padding-bottom:18px;margin-bottom:28px}.promo-kicker{font-size:10px;letter-spacing:2px}.partner-grid h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(38px,4vw,58px);line-height:1;margin:14px 0}.partner-grid p{font-size:14px;opacity:.85}.promo-button{align-self:flex-start;border-bottom:1px solid currentColor;padding:10px 0;font-size:12px;font-weight:800;letter-spacing:1px;transition:transform .2s}.partner-grid a:hover .promo-button{transform:translateX(5px)}.partner-grid small{margin-top:18px;font-size:10px;opacity:.8}.rm-ad,.kinguin-home-banner,.kinguin-deals,.lenovo-deal{box-shadow:none;animation:none;border:1px solid var(--line);border-radius:3px}.kinguin-home-banner{background:#232526}.page-hero{background:#191b1b}.filter-btn{border-radius:3px;padding:12px 18px}.deal-img{border-radius:0}.site-footer{background:#151717}
+@media(max-width:1000px){.home-finds{grid-template-columns:repeat(2,minmax(0,1fr))}.editorial-hero .hero-grid{gap:28px}.cover-bottom strong{font-size:52px}}
+@media(max-width:800px){.nav-wrap{height:68px}.editorial-hero .hero-grid{grid-template-columns:1fr;padding:30px 0 36px}.editorial-hero h1{font-size:clamp(60px,13.8vw,96px)}.hero-cover{min-height:390px;border-top-left-radius:90px}.cover-top{font-size:9px;padding-left:30px}.hero-footnote{margin-top:28px}.theme-strip .container{justify-content:center;gap:12px;font-size:18px}.theme-strip i{font-size:10px}.section{padding:56px 0}.world-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.world-card,.world-card:first-child,.world-card:nth-child(2){grid-column:span 1;min-height:260px;padding:18px}.world-card:last-child{grid-column:1/-1}.world-card h3{font-size:34px}.world-card p{font-size:16px;padding-right:15px}.world-number{font-size:10px}.world-arrow{right:14px;bottom:16px}.partner-grid{grid-template-columns:1fr}.partner-grid>a{padding:26px}.home-finds .deal-info p{font-size:16px}.home-finds .deal-info{padding:18px}.section-head h2{font-size:42px}.hero-copy{font-size:17px}}
+@media(max-width:480px){.home-finds,.world-grid{grid-template-columns:1fr}.world-card,.world-card:first-child,.world-card:nth-child(2){grid-column:1;min-height:280px}.hero-cover{min-height:360px}.cover-top,.cover-bottom{left:24px;right:24px}.cover-bottom strong{font-size:52px}.theme-strip .container{font-size:16px;gap:10px;letter-spacing:1px}.theme-strip i{display:none}}
+
+/* Homepage: cinematic game artwork and the final travel/shopping edit. */
+.home-game-promo{min-width:0;padding:32px;overflow:hidden;position:relative;display:flex;flex-direction:column;border:1px solid #cfa25755;border-radius:3px;background:radial-gradient(ellipse at 100% 0,#805d2c45,transparent 60%),linear-gradient(145deg,#222925,#111714);color:#f6f1e7}
+.game-promo-header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:30px}.game-brand{font-size:26px;font-weight:800;letter-spacing:-1px}.game-brand-dot{color:#edba69}.ad-caption{max-width:14ch;font-size:9px;letter-spacing:1.5px;text-align:right;color:#c5c6b9}.home-game-promo .promo-kicker{color:#edc995}.home-game-promo h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(44px,5vw,70px);line-height:.95;margin:16px 0}.home-game-promo h2 em{font-style:normal;color:#edc995}.home-game-promo>p{color:#c4c9c1;font-size:16px;max-width:36ch}.home-game-art{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:26px 0 22px}.home-game-art figure{margin:0;min-width:0;transition:transform .25s}.home-game-art figure:nth-child(2){transform:translateY(-10px)}.home-game-art figure:hover{transform:translateY(-6px)}.home-game-art figure:nth-child(2):hover{transform:translateY(-16px)}.home-game-art img{display:block;width:100%;height:auto;aspect-ratio:460/215;object-fit:cover;border:1px solid #ffffff30;box-shadow:0 12px 22px #090e0b66}.home-game-art figcaption{font-size:12px;line-height:1.4;margin-top:10px;color:#e2dfd1}.game-deal-strip{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}.game-deal-strip span{font-size:10px;letter-spacing:1px;border:1px solid #cfa25755;padding:7px 10px;color:#edc995}.game-shop-link{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:48px;padding:14px 18px;background:#edc995;color:#22251b;font-weight:800;font-size:13px;margin-top:auto;transition:background .2s}.game-shop-link:hover{background:#ffe1b4}.game-official-link{font-size:13px;text-decoration:underline;text-underline-offset:4px;align-self:flex-start;padding:14px 0}.home-game-promo>small{font-size:12px;line-height:1.65;color:#bac2b6}
+.home-bottom-promos{position:relative;background:radial-gradient(ellipse at 0 100%,#673e2f35,transparent 55%),#171b1b;border-top:1px solid var(--line);margin-top:28px}.home-bottom-promos .partner-grid{grid-template-columns:1.08fr 1fr;gap:24px}.bottom-partner-card{position:relative;display:flex;flex-direction:column;min-width:0;min-height:610px;padding:36px;border:1px solid #ffffff25;overflow:hidden;isolation:isolate}.home-bottom-promos .travel-promo{background:linear-gradient(90deg,#291622e8,#29162280),linear-gradient(0deg,#291622,transparent 90%),url('images/air-india-travel.jpg') center/cover;color:#fff2df}.home-bottom-promos .shopping-promo{background:linear-gradient(90deg,#391b14ed,#391b1460),linear-gradient(0deg,#391b14,transparent 90%),url('images/aliexpress-shopping.jpg') center/cover;color:#fff2df}.bottom-partner-card .partner-brand{font-size:28px;margin-bottom:38px}.bottom-partner-card .promo-kicker{color:#f2cfaa;line-height:1.8}.bottom-partner-card h3{font-family:'Barlow Condensed',sans-serif;font-size:clamp(42px,4.6vw,66px);font-weight:800;line-height:.98;letter-spacing:-.5px;margin:16px 0}.bottom-partner-card>p{max-width:34ch;font-size:16px;line-height:1.7;color:#f1e2d7}.partner-offer{display:flex;flex-direction:column;gap:6px;margin:16px 0 24px;border-left:2px solid #e5b98c;padding-left:14px}.partner-offer>span{font-size:10px;letter-spacing:2px;color:#f2cfaa}.partner-offer strong{font-size:17px;font-weight:600}.bottom-partner-card .promo-button{align-self:flex-start;margin-top:auto;min-height:48px;padding:14px 20px;border:1px solid #fff2df;background:#fff2df;color:#3e2525;font-size:13px;font-weight:800;letter-spacing:1px;transition:background .2s}.bottom-partner-card .promo-button:hover{background:#f2cfaa}.official-offers{align-self:flex-start;text-decoration:underline;text-underline-offset:4px;font-size:13px;padding:16px 0}.bottom-partner-card>small{color:#e1d0c4;font-size:12px;line-height:1.65;margin-top:0;max-width:55ch}
+@media(max-width:1000px){.home-game-promo{padding:26px}.home-game-art{grid-template-columns:1fr;gap:14px;margin-top:18px}.home-game-art figure,.home-game-art figure:nth-child(2){display:grid;grid-template-columns:1.1fr 1fr;gap:12px;align-items:center;transform:none}.home-game-art figcaption{margin:0;font-size:14px}.bottom-partner-card{padding:28px}}
+@media(max-width:800px){.home-bottom-promos .partner-grid{grid-template-columns:minmax(0,1fr)}.bottom-partner-card{min-height:590px;padding:28px 24px}.bottom-partner-card h3{font-size:clamp(42px,10vw,64px)}.home-game-promo h2{font-size:60px}.home-game-promo>small,.bottom-partner-card>small,.official-offers,.game-official-link,.game-shop-link,.bottom-partner-card .promo-button{font-size:16px}.home-game-art figcaption{font-size:16px}.game-promo-header{gap:10px}.home-bottom-promos .section-head{align-items:flex-start}.bottom-partner-card .promo-kicker{font-size:12px;letter-spacing:1.4px}.partner-offer strong{font-size:17px}}
+@media(prefers-reduced-motion:reduce){.home-game-art figure,.game-shop-link,.bottom-partner-card .promo-button{transition:none}.home-game-art figure:hover,.home-game-art figure:nth-child(2):hover{transform:none}}
+
+/* Compact Lenovo promotion beside the Offers & Deals introduction. */
+.deals-hero-layout{display:grid;grid-template-columns:minmax(0,1fr) 350px;gap:40px;align-items:center}
+.deals-hero-intro{min-width:0}
+.lenovo-mini{position:relative;isolation:isolate;overflow:hidden;border-radius:16px;background:#080b12;color:#fff;font-family:Arial,sans-serif;box-shadow:0 8px 30px #080b1280}
+.lenovo-mini-slides,.lenovo-mini-slides>div{position:absolute;inset:0;z-index:-2}
+.lenovo-mini-slides>div{background-size:cover;background-position:center;opacity:0;animation:lenovo-mini-show 20s infinite}
+.lenovo-mini-slides>div:nth-child(1){background-image:url('images/lenovo-legion.jpg')}
+.lenovo-mini-slides>div:nth-child(2){background-image:url('images/lenovo-yoga.jpg');animation-delay:5s}
+.lenovo-mini-slides>div:nth-child(3){background-image:url('images/lenovo-ideapad.jpg');animation-delay:10s}
+.lenovo-mini-slides>div:nth-child(4){background-image:url('images/lenovo-thinkpad.jpg');animation-delay:15s}
+.lenovo-mini-content{background:linear-gradient(90deg,#050914ed,#050914b8,#05091485);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px 14px;min-height:290px}
+.lenovo-mini-tag{font-size:11px;letter-spacing:2px;font-weight:bold}
+.lenovo-mini h2{font-size:25px;line-height:1.15;margin:13px 0 5px;text-shadow:0 2px 12px #080b12}
+.lenovo-mini h2 span{display:block;color:#ffdf60}
+.page-hero .lenovo-mini p{font-size:12px;line-height:1.5;font-weight:bold;margin:8px 0;max-width:32ch;color:#fff}
+.lenovo-mini-coupon{background:#fff;color:#111;padding:6px 22px;border:2px dashed #e2231a;border-radius:8px;font-size:10px;margin:7px;line-height:1.3}
+.lenovo-mini-coupon strong{display:block;font-size:24px;color:#b51c15;letter-spacing:3px}
+.lenovo-mini a{display:flex;align-items:center;justify-content:center;min-height:44px;background:#c82018;color:#fff;padding:10px 16px;border-radius:7px;font-size:14px;font-weight:900;margin:7px;transition:background .2s}
+.lenovo-mini a:hover{background:#a91812}
+.lenovo-mini small{font-size:10px;color:#ddd;margin-top:5px;line-height:1.5}
+@keyframes lenovo-mini-show{0%{opacity:0;transform:scale(1)}5%,25%{opacity:1}25%{transform:scale(1.12)}30%,100%{opacity:0}}
+@media(max-width:1000px){.deals-hero-layout{gap:24px;grid-template-columns:minmax(0,1fr) 320px}}
+@media(max-width:800px){.deals-hero-layout{grid-template-columns:minmax(0,1fr)}.lenovo-mini{width:100%;max-width:350px;justify-self:end}.page-hero .lenovo-mini p,.lenovo-mini small,.lenovo-mini a{font-size:16px}.lenovo-mini-content{padding:20px 14px}}
+@media(prefers-reduced-motion:reduce){.lenovo-mini-slides>div{animation:none}.lenovo-mini-slides>div:first-child{opacity:1}.lenovo-mini a{transition:none}}
+/* AliExpress compact deal banner (Offers & Deals page) */
+.ali-mini{position:relative;isolation:isolate;overflow:hidden;max-width:430px;margin:0 auto;border-radius:16px;background:#080b12;color:#fff;font-family:Arial,sans-serif;box-shadow:0 8px 30px #0008}
+.ali-mini-slides,.ali-mini-slides>div{position:absolute;inset:0;z-index:-2}
+.ali-mini-slides>div{background-size:cover;background-position:center;opacity:0;animation:ali-mini-show 20s infinite}
+.ali-mini-slides>div:nth-child(1){background-image:url('https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=900')}
+.ali-mini-slides>div:nth-child(2){background-image:url('https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=900');animation-delay:5s}
+.ali-mini-slides>div:nth-child(3){background-image:url('https://images.unsplash.com/photo-1599669454699-248893623440?w=900');animation-delay:10s}
+.ali-mini-slides>div:nth-child(4){background-image:url('https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=900');animation-delay:15s}
+.ali-mini-content{min-height:290px;background:linear-gradient(90deg,#050914ed,#050914a8,#05091440);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:14px;box-sizing:border-box}
+.ali-mini-tag{font-size:11px;letter-spacing:3px;font-weight:bold;color:#55edff}
+.ali-mini h2{font-size:30px;line-height:1.15;margin:13px 0 5px;color:#fff;text-shadow:0 2px 12px #000}
+.ali-mini h2 span{color:#ffdc48}
+.ali-mini p{font-size:11px;font-weight:bold;margin:6px 0;color:#fff}
+.ali-mini-coupon{background:#fff;color:#111;padding:7px 22px;border:2px dashed #ff4b27;border-radius:8px;font-size:10px;margin:7px;line-height:1.3}
+.ali-mini-coupon strong{display:block;font-size:18px;color:#ef3525;letter-spacing:1px}
+.ali-mini a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;background:#ff4029;color:#fff;text-decoration:none;padding:12px 22px;border-radius:7px;font-size:13px;font-weight:900;margin:7px;box-shadow:0 0 18px #ff4029;animation:ali-mini-shine 1.5s infinite}
+.ali-mini small{font-size:9px;color:#eee;margin-top:5px}
+@keyframes ali-mini-show{0%{opacity:0;transform:scale(1)}5%{opacity:1}25%{opacity:1;transform:scale(1.12)}30%,100%{opacity:0}}
+@keyframes ali-mini-shine{50%{box-shadow:0 0 25px #ff4949;transform:scale(1.04)}}
+@media(prefers-reduced-motion:reduce){.ali-mini-slides>div,.ali-mini a{animation:none}.ali-mini-slides>div:first-child{opacity:1}}
+/* Mini deals row: REDMAGIC left, empty centre, AliExpress right */
+.mini-deals-row{display:grid;grid-template-columns:minmax(0,430px) minmax(0,1fr) minmax(0,430px);gap:24px;align-items:stretch}
+.mini-deals-row .ali-mini{margin:0;width:100%;justify-self:end}
+@media(max-width:900px){.mini-deals-row{grid-template-columns:minmax(0,1fr);justify-items:center;gap:20px}.mini-deals-gap{display:none}.mini-deals-row .ali-mini,.mini-deals-row .rmg-mini{justify-self:center}}
+/* REDMAGIC compact deal banner */
+.rmg-mini{position:relative;isolation:isolate;overflow:hidden;width:100%;max-width:430px;min-height:290px;border-radius:16px;background:#050505;color:#fff;font-family:Arial,Helvetica,sans-serif;box-shadow:0 8px 30px #000a}
+.rmg-mini-slides,.rmg-mini-slides>div{position:absolute;inset:0;z-index:-2}
+.rmg-mini-slides>div{background-size:cover;background-position:center;opacity:0;animation:rmg-mini-show 20s infinite}
+.rmg-mini-slides>div:nth-child(1),.rmg-mini-slides>div:nth-child(3){background-image:url('https://global.redmagic.gg/cdn/shop/files/3colors.png?v=1776831489&width=900')}
+.rmg-mini-slides>div:nth-child(2),.rmg-mini-slides>div:nth-child(4){background-image:url('https://global.redmagic.gg/cdn/shop/files/Black_White_Trace_ca55e013-1ccb-45a4-8418-abb08e97bc92.png?v=1776830352&width=900')}
+.rmg-mini-slides>div:nth-child(2){animation-delay:5s}
+.rmg-mini-slides>div:nth-child(3){animation-delay:10s}
+.rmg-mini-slides>div:nth-child(4){animation-delay:15s}
+.rmg-mini:after{content:"";position:absolute;inset:-50%;background:linear-gradient(115deg,transparent 40%,#ff292933 50%,transparent 60%);animation:rmg-mini-laser 5s linear infinite;pointer-events:none;z-index:1}
+.rmg-mini-link{position:absolute;inset:0;z-index:5;border-radius:16px}
+.rmg-mini-link:focus-visible{outline:3px solid #ffe75b;outline-offset:-3px}
+.rmg-mini-content{position:relative;z-index:2;pointer-events:none;min-height:290px;background:linear-gradient(90deg,#050505ed 0%,#090909bb 48%,#09090950 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10px;box-sizing:border-box}
+.rmg-mini-tag{font-size:10px;letter-spacing:3px;font-weight:900;color:#ff4545;text-shadow:0 0 12px red}
+.rmg-mini-limited{font-size:10px;font-weight:900;color:#ffe75b;margin-top:8px;animation:rmg-mini-blink 1s infinite}
+.rmg-mini h2{font-size:32px;line-height:1.02;font-weight:900;margin:9px 0 5px;font-style:italic;color:#fff;text-shadow:0 3px 15px #000}
+.rmg-mini h2 span{color:#ff303b;text-shadow:0 0 15px #ff1010}
+.rmg-mini p{font-size:12px;font-weight:900;margin:5px;letter-spacing:1px;color:#fff}
+.rmg-mini p.rmg-mini-features{font-size:9px;color:#ddd}
+.rmg-mini-offer{margin:7px;padding:6px 22px;background:linear-gradient(100deg,#ffcf36,#ff7428);color:#130800;border-radius:5px;transform:skew(-5deg);box-shadow:0 0 20px #ff4b2b88}
+.rmg-mini-offer strong{display:block;font-size:20px;font-weight:900}
+.rmg-mini-offer span{font-size:9px;font-weight:900}
+.rmg-mini-cta{background:linear-gradient(90deg,#ff1818,#ff5a21);color:#fff;padding:11px 25px;border-radius:5px;font-size:13px;font-weight:900;letter-spacing:.5px;box-shadow:0 0 20px #ff2020;animation:rmg-mini-shine 1.2s infinite}
+.rmg-mini-cta span{display:inline-block;margin-left:8px;animation:rmg-mini-arrow .7s infinite alternate}
+.rmg-mini small{margin-top:7px;color:#eee;font-size:9px}
+@keyframes rmg-mini-show{0%{opacity:0;transform:scale(1)}5%{opacity:1}23%{opacity:1;transform:scale(1.16)}28%,100%{opacity:0}}
+@keyframes rmg-mini-laser{from{transform:translateX(-50%)}to{transform:translateX(50%)}}
+@keyframes rmg-mini-shine{50%{transform:scale(1.06);box-shadow:0 0 28px #ff2828}}
+@keyframes rmg-mini-arrow{to{transform:translateX(5px)}}
+@keyframes rmg-mini-blink{50%{opacity:.45}}
+@media(prefers-reduced-motion:reduce){.rmg-mini-slides>div,.rmg-mini:after,.rmg-mini-cta,.rmg-mini-limited,.rmg-mini-cta span{animation:none}.rmg-mini-slides>div:first-child{opacity:1}}
+/* Offers & Deals: photo backgrounds for Air India and AliExpress promos */
+.deals-partner-section .partner-grid>a{isolation:isolate;color:#fff;border-radius:3px}
+.deals-partner-section .travel-promo{background:linear-gradient(90deg,#2a0d14f2 0%,#4a1620c4 50%,#4a162040 100%),linear-gradient(0deg,#2a0d14d9,transparent 60%),url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&auto=format&fit=crop') center/cover;color:#fff3e4}
+.deals-partner-section .shopping-promo{background:linear-gradient(90deg,#08060ff2 0%,#1a0c24c4 50%,#1a0c2440 100%),linear-gradient(0deg,#08060fd9,transparent 60%),url('https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200&auto=format&fit=crop') center/cover;color:#fff3e4}
+.deals-partner-section .partner-grid p{opacity:.95;text-shadow:0 1px 8px #000a}
+.deals-partner-section .partner-grid h2{text-shadow:0 2px 14px #000b}
+.deals-partner-section .partner-grid small{opacity:.9}
+
+
+/* Launch polish: keyboard access, form feedback and motion preferences */
+:focus-visible{outline:3px solid #ff6572;outline-offset:3px}
+.skip-link{position:fixed;left:14px;top:10px;z-index:1000;padding:10px 14px;background:#fff;color:#111;border-radius:6px;font-weight:800;transform:translateY(-160%);transition:transform .2s}
+.skip-link:focus{transform:translateY(0)}
+.form-status{margin:14px 0 0;padding:12px 14px;border:1px solid #ffffff24;border-radius:8px;background:#151518;color:#f7f7f7;font-size:13px}
+.form-status[data-error="true"]{border-color:#ed2435;color:#ffb5bc}
+.deal-img{background-color:#171719;background-position:center;background-repeat:no-repeat;background-size:cover}
+.deal-img--product{background-size:contain}
+::selection{background:#ed2435;color:#fff}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}

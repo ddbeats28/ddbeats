@@ -403,3 +403,37 @@ body{background:var(--bg)}.topline{background:#d54d40;height:4px}.brand-mark{bor
 @keyframes gbShine{50%{box-shadow:0 0 27px #00dfff;transform:scale(1.03)}}
 @media(max-width:900px){.mini-deals-row{grid-template-columns:minmax(0,1fr);justify-items:center;gap:20px}.mini-deals-row .rmg-mini,.mini-deals-row .ali-mini,.mini-deals-row .geekbuy{justify-self:center;width:100%;max-width:430px}}
 @media(prefers-reduced-motion:reduce){.gb-slide,.gb-overlay a{animation:none}.gb-slide:first-child{opacity:1}}
+
+
+/* DKNY + Gaming Accessories side-by-side sponsored ad row */
+.dkny-gaming-pair{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:20px;align-items:stretch}
+.dkny-gaming-pair>.dkny-link,.dkny-gaming-pair>.gaming-accessories-ad{min-width:0;height:310px}
+.dkny-gaming-pair .dkny-ad{height:100%;border-radius:10px}
+.dkny-gaming-pair .dkny-logo{font-size:clamp(38px,5vw,60px);letter-spacing:7px}
+.dkny-gaming-pair .dkny-top{font-size:8px;letter-spacing:3px}
+.dkny-gaming-pair .dkny-heading{font-size:clamp(14px,1.8vw,20px);letter-spacing:2px}
+.dkny-gaming-pair .dkny-sub{font-size:8px;letter-spacing:2px;margin:9px 0 15px}
+.dkny-gaming-pair .dkny-button{font-size:9px;padding:11px 14px;letter-spacing:1px}
+.dkny-gaming-pair .dkny-bottom{font-size:7px;letter-spacing:1px;margin-top:12px}
+.gaming-accessories-ad{position:relative;display:block;isolation:isolate;overflow:hidden;border:1px solid #00dfff66;border-radius:10px;background:#080b17;color:#fff;font-family:Arial,Helvetica,sans-serif;line-height:normal;text-decoration:none}
+.ga-slides,.ga-slides img{position:absolute;inset:0;width:100%;height:100%}
+.ga-slides img{object-fit:cover;opacity:0;animation:gaSlideshow 15s infinite}
+.ga-slides img:nth-child(2){animation-delay:5s}.ga-slides img:nth-child(3){animation-delay:10s}
+.ga-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.82),rgba(0,0,0,.2) 48%,rgba(0,0,0,.9))}
+.ga-glow{position:absolute;width:130px;height:130px;left:35%;top:35%;background:#00dfff;filter:blur(75px);opacity:.35;animation:gaGlow 4s infinite alternate;pointer-events:none}
+.ga-top,.ga-bottom{position:absolute;left:10px;right:10px;text-align:center;z-index:2}
+.ga-top{top:18px}.ga-tag{display:inline-block;padding:5px 10px;border:1px solid #00eaff;border-radius:20px;background:#000a;color:#00edff;font-size:9px;font-weight:900;letter-spacing:1.4px}
+.ga-top h2{margin:12px 0 0;font-size:clamp(23px,3.3vw,36px);line-height:.95;font-weight:1000;text-shadow:0 2px 10px #000}
+.ga-discount{display:block;color:#ff2929;font-size:clamp(48px,6vw,66px);text-shadow:0 2px 0 #8d0000,0 0 15px #f006;animation:gaPulse 1.7s infinite}
+.ga-off{position:absolute;font-size:21px;margin:8px 0 0 5px}
+.ga-sub{margin-top:7px;font-size:9px;font-weight:bold;letter-spacing:1px;text-shadow:0 2px 5px #000}
+.ga-bottom{bottom:13px}.ga-offer{font-size:10px;font-weight:900;margin-bottom:9px;text-shadow:0 2px 6px #000}
+.ga-button{display:block;padding:12px 5px;border-radius:5px;background:linear-gradient(100deg,#00eaff,#a1ffcf);color:#07101a;font-size:13px;font-weight:1000;letter-spacing:1px;box-shadow:0 0 20px #00eaffb3;animation:gaButtonPulse 1.5s infinite}
+.ga-bottom small{display:block;margin-top:7px;color:#eee;font-size:8px;text-shadow:0 2px 5px #000}
+.gaming-accessories-ad:hover .ga-slides img{animation-play-state:paused}
+@keyframes gaSlideshow{0%{opacity:0;transform:scale(1.12)}6%{opacity:1}29%{opacity:1;transform:scale(1)}36%,100%{opacity:0}}
+@keyframes gaGlow{to{transform:translateX(35px)}}
+@keyframes gaPulse{50%{transform:scale(1.06);text-shadow:0 0 23px red}}
+@keyframes gaButtonPulse{50%{box-shadow:0 0 28px #00eaff}}
+@media(max-width:700px){.dkny-gaming-pair{grid-template-columns:minmax(0,1fr);gap:16px}.dkny-gaming-pair>.dkny-link,.dkny-gaming-pair>.gaming-accessories-ad{height:290px}.dkny-gaming-pair .dkny-ad{height:100%}.ga-top h2{font-size:30px}.ga-discount{font-size:56px}}
+@media(prefers-reduced-motion:reduce){.ga-slides img,.ga-glow,.ga-discount,.ga-button{animation:none}.ga-slides img:first-child{opacity:1}}
